@@ -1,0 +1,22 @@
+.header {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 94.5px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding: 0 30px;
+
+    button {
+        background-color: #fff;
+        border-radius: 7px;
+        border: none;
+        color: #000;
+        font-size: 13.5px;
+        padding: 15px 20px;
+        font-family: 'Inter', sans-serif;
+        cursor: pointer;
+    }
+}
