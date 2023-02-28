@@ -26,6 +26,7 @@ export default function Home() {
           <h1>
             <a href="#main">
               The Decentralized Reserve Asset Protocol
+            <div className={styles.downArrow} />
             </a>
           </h1>
         </section>
