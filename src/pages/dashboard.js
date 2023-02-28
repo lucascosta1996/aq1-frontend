@@ -4,6 +4,7 @@ import sampleData from '../sample_data';
 import { numberToDollarFormat } from '@/helpers/textFormatting';
 import { Aq1IconWhite } from '@/assets/Aq1IconWhite';
 import { EtherIcon } from '@/assets/EtherIcon';
+import DashboardFooter from '@/components/DashboardFooter/DashboardFooter';
 
 export async function getServerSideProps() {
     // TODO: Make api calls here
@@ -96,11 +97,11 @@ export default function Dashboard({ dashboardData }) {
                 </div>
                 <div className={styles.dashboardCard}>
                     <h2>AQ1 Royalties Fees</h2>
-                    <span className={styles.dashboardCardNumber}>{treasuryStake}%</span>
-                    <span className={styles.aq1Quantity}>{tokenCount} AQ1</span>
+                    <span className={styles.dashboardCardNumber}>10%</span>
                     <span className={styles.walletAddress}>{walletAddress}</span>
                 </div>
             </section>
+            <DashboardFooter />
         </>
     )
 }
