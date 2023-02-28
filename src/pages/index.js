@@ -1,13 +1,8 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
 import Navbar from '@/components/Navbar/Navbar'
 import useScrollPosition from '@/hooks/useScrollPosition'
-import { useEffect } from 'react'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const scrollPosition = useScrollPosition();
