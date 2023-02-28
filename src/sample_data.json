@@ -7,5 +7,6 @@
     "ownerCount":349,
     "totalVolume":"332.9115",
     "lowestPriceIn24H":"0.09",
-    "tradedVolumeIn24H":"1.3206000000000002"
+    "tradedVolumeIn24H":"1.3206000000000002",
+    "walletAddress": "0x8384782427"
 }

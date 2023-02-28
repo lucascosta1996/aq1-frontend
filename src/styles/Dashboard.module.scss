@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.dashboardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 160px;
+    justify-content: center;
+}
+
+.dashboardCard {
+    border: 1px solid #252525;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 200px;
+    padding: 16px;
+    margin: 9px 5px;
+    flex: 0 0 32.333333%;
+    font-family: 'Inter', sans-serif;
+
+    @media (max-width: 1024px) {
+        flex: 0 0 100%;
+    }
+
+    h2 {
+        color: #86868b;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+}
+
+.dashboardCardNumber {
+    font-size: 25.6px;
+    margin-bottom: 10px;
+}
+
+.aq1Quantity {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2;
+    color: #86868b;
+    font-family: 'Inter', sans-serif;
+}
+
+.walletAddress {
+    font-size: 13.5px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
