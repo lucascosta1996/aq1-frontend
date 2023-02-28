@@ -25,7 +25,7 @@
     font-family: 'Inter', sans-serif;
 
     @media (max-width: 1024px) {
-        flex: 0 0 100%;
+        flex: 0 0 95%;
     }
 
     h2 {
@@ -46,6 +46,11 @@
     line-height: 2;
     color: #86868b;
     font-family: 'Inter', sans-serif;
+
+    svg {
+        height: 14px!important;
+        width: 14px!important;
+    }
 }
 
 .walletAddress {
@@ -53,4 +58,38 @@
     position: absolute;
     right: 16px;
     top: 16px;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    svg {
+        height: 80px!important;
+        width: 80px!important;
+    }
+}
+
+.dashboardCardSmall {
+    border: 1px solid #252525;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 200px;
+    padding: 16px;
+    margin: 9px 6px;
+    flex: 0 0 18.99999999%;
+    font-family: 'Inter', sans-serif;
+
+    @media (max-width: 1024px) {
+        flex: 0 0 95%;
+    }
+
+    h2 {
+        color: #86868b;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
 }

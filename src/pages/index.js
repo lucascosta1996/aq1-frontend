@@ -31,7 +31,7 @@ export default function Home() {
           </h1>
         </section>
         <section className={styles.mainContent} id="main">
-          
+          {/* 3 sections: 1 - 3 cards in a row; 2 - AQ1 SVG sample 3 - Footer */}
         </section>
       </main>
     </>
