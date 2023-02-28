@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.scss'
 import Navbar from '@/components/Navbar/Navbar'
 import useScrollPosition from '@/hooks/useScrollPosition'
+import { Arrow } from '@/assets/Arrow'
 
 export default function Home() {
   const scrollPosition = useScrollPosition();
@@ -32,6 +33,41 @@ export default function Home() {
         </section>
         <section className={styles.mainContent} id="main">
           {/* 3 sections: 1 - 3 cards in a row; 2 - AQ1 SVG sample 3 - Footer */}
+          <div className={styles.section1}>
+            <div className={styles.section1Cards}>
+              <h2>AQ1</h2>
+              <p>
+                1,000 NFTs backed 1:1 by a 0,1% stake in the Aliquo Treasury.
+              </p>
+              <button>
+                <a href="https://docs.aliquo.xyz/basics/aq1" target="_blank">
+                  <Arrow />
+                </a>
+              </button>
+            </div>
+            <div className={styles.section1Cards}>
+              <h2>Aliquo DAO</h2>
+              <p>
+                The decentralized organization of AQ1 token-holders.
+              </p>
+              <button>
+                <a href="https://docs.aliquo.xyz/basics/aliquo-dao" target="_blank">
+                  <Arrow />
+                </a>
+              </button>
+            </div>
+            <div className={styles.section1Cards}>
+              <h2>Aliquo Treasury</h2>
+              <p>
+                The multi-signature protocol reserve backing the value of AQ1.
+              </p>
+              <button>
+                <a href="https://docs.aliquo.xyz/basics/aliquo-treasury" target="_blank">
+                  <Arrow />
+                </a>
+              </button>
+            </div>
+          </div>
         </section>
       </main>
     </>

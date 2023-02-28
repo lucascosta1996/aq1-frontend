@@ -2,9 +2,9 @@ import styles from '@/styles/Dashboard.module.scss';
 import DashboardHeader from '@/components/DashboardHeader/DashboardHeader';
 import sampleData from '../sample_data';
 import { numberToDollarFormat } from '@/helpers/textFormatting';
-import { Aq1IconWhite } from '@/assets/Aq1IconWhite';
 import { EtherIcon } from '@/assets/EtherIcon';
 import DashboardFooter from '@/components/DashboardFooter/DashboardFooter';
+import { useEffect } from 'react';
 
 export async function getServerSideProps() {
     // TODO: Make api calls here
@@ -25,6 +25,10 @@ export default function Dashboard({ dashboardData }) {
         ownerCount,
         totalVolume
     } = dashboardData;
+
+    useEffect(() => {
+        // TODO: When receiving new api calls we must compare the new values and show the diff for each new value.
+    }, [dashboardData]);
     return (
         <>
             <div className={styles.header}>
