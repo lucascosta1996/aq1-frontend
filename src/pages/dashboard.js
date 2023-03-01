@@ -4,7 +4,7 @@ import sampleData from '../sample_data';
 import { numberToDollarFormat } from '@/helpers/textFormatting';
 import { EtherIcon } from '@/assets/EtherIcon';
 import DashboardFooter from '@/components/DashboardFooter/DashboardFooter';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export async function getServerSideProps() {
     // TODO: Make api calls here
@@ -15,6 +15,23 @@ export async function getServerSideProps() {
       }
 }
 
+const temporarySamplePreviousData = {
+    tokenCount:2,
+    treasuryStake:0.2,
+    ethPriceInUSD:1599,
+    treasuryBalance:"11.493057399000000004",
+    treasuryAssetValue:"18411.877953198000006408",
+    ownerCount:309,
+    totalVolume:"332.9115",
+    lowestPriceIn24H:"0.09",
+    tradedVolumeIn24H:"1.3206000000000002",
+    walletAddress: "0x8384...",
+    treasuryBalanceInWeth: "0.76487951",
+    treasuryBalanceInBloorPool: "1.86755",
+    treasuryAssetValueInUSD: "23890.506799814640006555",
+    treasuryAssetValueTotal: "14.576625909000000004"
+}
+
 export default function Dashboard({ dashboardData }) {
     const {
         tokenCount,
@@ -23,12 +40,19 @@ export default function Dashboard({ dashboardData }) {
         walletAddress,
         treasuryAssetValue,
         ownerCount,
-        totalVolume
+        totalVolume,
+        treasuryBalanceInWeth,
+        treasuryBalanceInBloorPool,
+        treasuryAssetValueTotal
     } = dashboardData;
+    
+    const [ previousData, setPreviousData ] = useState({});
+    const myBalanceDiff = numberToDollarFormat((tokenCount * previousData?.ethPriceInUSD) - (tokenCount * ethPriceInUSD));
 
     useEffect(() => {
         // TODO: When receiving new api calls we must compare the new values and show the diff for each new value.
-    }, [dashboardData]);
+        setPreviousData(temporarySamplePreviousData); 
+    }, []);
     return (
         <>
             <div className={styles.header}>
@@ -37,7 +61,16 @@ export default function Dashboard({ dashboardData }) {
             <section className={styles.dashboardContainer}>
                 <div className={styles.dashboardCard}>
                     <h2>My Balance</h2>
-                    <span className={styles.dashboardCardNumber}>{numberToDollarFormat(tokenCount * ethPriceInUSD)}</span>
+                    <span className={styles.dashboardCardNumber}>
+                        {numberToDollarFormat(tokenCount * ethPriceInUSD)}
+                        {(ethPriceInUSD !== previousData.ethPriceInUSD) ? (
+                            <div>
+                                <span className={previousData.ethPriceInUSD > ethPriceInUSD ? styles.positiveAmount : styles.negativeAmount}>
+                                    {myBalanceDiff}
+                                </span>
+                            </div>
+                        ) : null}
+                    </span>
                     <span className={styles.aq1Quantity}>{tokenCount} AQ1</span>
                     <span className={styles.walletAddress}>{walletAddress}</span>
                 </div>
@@ -60,6 +93,20 @@ export default function Dashboard({ dashboardData }) {
                 </div>
                 <div className={styles.dashboardCard}>
                     <h2>Treasury Composition</h2>
+                    <ul className={styles.list}>
+                        <li>
+                            <span>WETH</span>
+                            <p>{parseFloat(treasuryBalanceInWeth)}</p>
+                        </li>
+                        <li>
+                            <span>Blur Pool</span>
+                            <p>{parseFloat(treasuryBalanceInBloorPool)}</p>
+                        </li>
+                        <li>
+                            <span>ETH</span>
+                            <p>{parseFloat(treasuryAssetValueTotal)}</p>
+                        </li>
+                    </ul>
                     <span className={styles.walletAddress}>{walletAddress}</span>
                 </div>
                 <div className={styles.dashboardCard}>

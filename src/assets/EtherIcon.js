@@ -1,5 +1,5 @@
 export const EtherIcon = () => (
-    <svg class="icon icon-name"
+    <svg className="icon icon-name"
         xmlns="http://www.w3.org/2000/svg"
         xmlSpace="preserve"
         width="100%"

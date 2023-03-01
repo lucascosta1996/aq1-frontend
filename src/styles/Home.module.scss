@@ -65,6 +65,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 }
 
 .section1Cards {
@@ -76,7 +80,7 @@
   align-items: flex-start;
   font-family: 'Inter', sans-serif;
   padding: 36px 32px;
-  height: 362px;
+  height: 352px;
   width: 333px;
   position: relative;
   margin: 0 20px;
@@ -85,6 +89,7 @@
     width: 95%;
     margin: auto;
     flex-direction: column;
+    margin: 10px 0;
   }
 
   h2 {
@@ -109,5 +114,11 @@
     position: absolute;
     bottom: 32px;
     right: 36px;
+
+    @media (max-width: 1024px) {
+      bottom: 12px;
+      right: 12px;
+    }
+  
   }
 }

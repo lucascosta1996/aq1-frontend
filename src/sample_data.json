@@ -8,5 +8,9 @@
     "totalVolume":"332.9115",
     "lowestPriceIn24H":"0.09",
     "tradedVolumeIn24H":"1.3206000000000002",
-    "walletAddress": "0x8384782427"
+    "walletAddress": "0x8384...",
+    "treasuryBalanceInWeth": "0.76487951",
+    "treasuryBalanceInBloorPool": "1.86755",
+    "treasuryAssetValueInUSD": "23890.506799814640006555",
+    "treasuryAssetValueTotal": "14.576625909000000004"
 }
