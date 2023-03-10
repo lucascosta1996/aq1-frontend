@@ -9,7 +9,6 @@ export default function DashboardHeader() {
                 <Aq1IconWhite />
             </Link>
             {/* TODO: Make api request to connect wallet */}
-            <button>Connect Wallet</button>
         </header>
     )
 }
