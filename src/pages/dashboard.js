@@ -7,13 +7,17 @@ import useIsFirstRender from '@/hooks/useIsFirstRender';
 import BigNumber from "bignumber.js";
 
 export async function getServerSideProps() {
-    const [collectionRes, ethBalanceRes] = await Promise.all([
+    const [collectionRes, ethBalanceRes, blurPoolBalanceRes, wethBalanceRes] = await Promise.all([
         fetch('https://api.opensea.io/api/v1/collection/aqone?format=json'),
-        fetch(`https://api.etherscan.io/api?module=account&action=balance&address=0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3&tag=latest&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`)
+        fetch(`https://api.etherscan.io/api?module=account&action=balance&address=0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3&tag=latest&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`),
+        fetch(`https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x0000000000a39bb272e79075ade125fd351887ac&address=0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3&tag=latest&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`),
+        fetch(`https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0xC02aaa39b223fe8d0a0e5c4f27ead9083c756cc2&address=0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3&tag=latest&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`)
     ]);
-    const [collection, ethBalance] = await Promise.all([
+    const [collection, ethBalance, blurPoolBalance, wethBalance] = await Promise.all([
         collectionRes.json(),
-        ethBalanceRes.json()
+        ethBalanceRes.json(),
+        blurPoolBalanceRes.json(),
+        wethBalanceRes.json()
     ]);
 
     return {
@@ -23,8 +27,10 @@ export async function getServerSideProps() {
         sales: collection?.collection?.stats?.total_sales,
         volume: collection?.collection?.stats?.total_volume,
         marketCap: collection?.collection?.stats?.market_cap,
-        ethBalanceTreasury: ethBalance
-      }, // will be passed to the page component as props
+        ethBalanceTreasury: ethBalance,
+        blurPoolBalanceTreasury: blurPoolBalance,
+        wethBalanceTreasury: wethBalance
+      },
     }
   }
 
@@ -34,7 +40,9 @@ export default function Dashboard({
     sales,
     volume,
     marketCap,
-    ethBalanceTreasury
+    ethBalanceTreasury,
+    blurPoolBalanceTreasury,
+    wethBalanceTreasury
 }) {
     const isFirst = useIsFirstRender();
     const isFirstRender = useRef(true);
@@ -59,59 +67,30 @@ export default function Dashboard({
     }, [treasuryBalance, blurPoolBalance, wethBalance, treasuryAssetsValue]);
 
     useEffect(() => {
-        if (isFirstRender.current) {
-            isFirstRender.current = false;
-            return;
-        }
-        if (isFirst) {
-            // async function fetchBalance() {
-            //     const response = await fetch(
-            //         `https://api.etherscan.io/api?module=account&action=balance&address=0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3&tag=latest&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`
-            //     );
-            //     let result = await response.json();
-            //     const bigNumber = new BigNumber(result.result);
-            //     const formattedResult = bigNumber.dividedBy('1000000000000000000');
-            //     setTreasuryBalance(formattedResult)
-            //     return result;
-            // }
-    
-            async function fetchBlurPoolBalance() {
-                const response = await fetch(
-                    `https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x0000000000a39bb272e79075ade125fd351887ac&address=0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3&tag=latest&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`
-                  );
-                  let result = await response.json();
-                  const bigNumber = new BigNumber(result.result);
-                  const formattedResult = bigNumber.dividedBy('1000000000000000000');
-                  setBlurPoolBalance(formattedResult)
-                  return result;
-            }
-    
-            async function fetchWETHBalance() {
-                const response = await fetch(
-                    `https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0xC02aaa39b223fe8d0a0e5c4f27ead9083c756cc2&address=0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3&tag=latest&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`
-                  );
-                  let result = await response.json();
-                  const bigNumber = new BigNumber(result.result);
-                  const formattedResult = bigNumber.dividedBy('1000000000000000000');
-                  setWethBalance(formattedResult)
-                  return result;
-            }
-          
-            // fetchBalance();
-            fetchBlurPoolBalance();
-            fetchWETHBalance();
-        }
-    }, []);
-
-    useEffect(() => {
         // TODO: When receiving new api calls we must compare the new values and show the diff for each new value.
         // setPreviousData(temporarySamplePreviousData);
         if (ethBalanceTreasury !== undefined && ethBalanceTreasury !== null) {
-            const bigNumberEthBalance = new BigNumber(ethBalanceTreasury?.result);
-            const formattedEthBalance = bigNumberEthBalance.dividedBy('1000000000000000000');
-            setTreasuryBalance(formattedEthBalance);
-        } 
+            const bigNumber = new BigNumber(ethBalanceTreasury?.result);
+            const formattedBalance = bigNumber.dividedBy('1000000000000000000');
+            setTreasuryBalance(formattedBalance);
+        }
     }, [ethBalanceTreasury]);
+
+    useEffect(() => {
+        if (blurPoolBalanceTreasury !== undefined && blurPoolBalanceTreasury !== null) {
+            const bigNumber = new BigNumber(blurPoolBalanceTreasury?.result);
+            const formattedBalance = bigNumber.dividedBy('1000000000000000000');
+            setBlurPoolBalance(formattedBalance);
+        }
+    }, [blurPoolBalanceTreasury]);
+
+    useEffect(() => {
+        if (wethBalanceTreasury !== undefined && wethBalanceTreasury !== null) {
+            const bigNumber = new BigNumber(wethBalanceTreasury?.result);
+            const formattedBalance = bigNumber.dividedBy('1000000000000000000');
+            setWethBalance(formattedBalance);
+        }
+    }, [wethBalanceTreasury]);
 
     return (
         <>
@@ -160,16 +139,16 @@ export default function Dashboard({
                     <h2>Treasury Composition</h2>
                     <ul className={styles.list}>
                         <li>
-                            <span>ETH</span>
-                            <p>{parseFloat(treasuryBalance?.toFixed(5))}</p>
+                            <span>{parseFloat(treasuryBalance?.toFixed(5))}</span>
+                            <p>ETH</p>
                         </li>
                         <li>
-                            <span>WETH</span>
-                            <p>{parseFloat(wethBalance?.toFixed(5))}</p>
+                            <span>{parseFloat(wethBalance?.toFixed(5))}</span>
+                            <p>WETH</p>
                         </li>
                         <li>
-                            <span>Blur Pool</span>
-                            <p>{parseFloat(blurPoolBalance?.toFixed(5))}</p>
+                            <span>{parseFloat(blurPoolBalance?.toFixed(5))}</span>
+                            <p>Blur Pool</p>
                         </li>
                     </ul>
                 </div>
@@ -181,12 +160,12 @@ export default function Dashboard({
                             <p>ETH</p>
                         </li>
                         <li>
-                            <span>{blurPoolAllocation}%</span>
-                            <p>Blur Pool</p>
-                        </li>
-                        <li>
                             <span>{wethAllocation}%</span>
                             <p>WETH</p>
+                        </li>
+                        <li>
+                            <span>{blurPoolAllocation}%</span>
+                            <p>Blur Pool</p>
                         </li>
                     </ul>
                 </div>
