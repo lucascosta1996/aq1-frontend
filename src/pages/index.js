@@ -1,16 +1,13 @@
 import styles from '@/styles/Dashboard.module.scss';
 import DashboardHeader from '@/components/DashboardHeader/DashboardHeader';
-import sampleData from '../sample_data';
 import DashboardFooter from '@/components/DashboardFooter/DashboardFooter';
 import { useEffect, useState } from 'react';
-import useIsFirstRender from '@/hooks/useIsFirstRender';
 import BigNumber from "bignumber.js";
 import { EtherIcon } from '@/assets/EtherIcon';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
 import { TooltipIcon } from '@/assets/TooltipIcon';
 import { tooltips } from '@/utils/tooltips';
-// import '@/styles/globals.scss'
 
 export async function getServerSideProps() {
   const [collectionRes, ethBalanceRes, blurPoolBalanceRes, wethBalanceRes] = await Promise.all([
