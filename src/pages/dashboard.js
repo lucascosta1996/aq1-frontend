@@ -5,6 +5,12 @@ import DashboardFooter from '@/components/DashboardFooter/DashboardFooter';
 import { useEffect, useState, useRef } from 'react';
 import useIsFirstRender from '@/hooks/useIsFirstRender';
 import BigNumber from "bignumber.js";
+import { EtherIcon } from '@/assets/EtherIcon';
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+import { TooltipIcon } from '@/assets/TooltipIcon';
+import { tooltips } from '@/utils/tooltips';
+import { OpenInNewTabIcon } from '@/assets/OpenInNewTabIcon'
 
 export async function getServerSideProps() {
     const [collectionRes, ethBalanceRes, blurPoolBalanceRes, wethBalanceRes] = await Promise.all([
@@ -99,12 +105,24 @@ export default function Dashboard({
             </div>
             <section className={styles.dashboardContainer}>
                 <div className={styles.dashboardCardSmall}>
-                    <h2>AQ1 Backed Floor Price</h2>
-                    <span className={styles.dashboardCardNumber}>{parseFloat(treasuryAssetsValue * 0.001).toFixed(5)}</span>
+                    <h2>
+                        AQ1 Backed Floor Price
+                        <Tooltip id="my-tooltip" className={styles.toolTipBallon} />
+                        <a data-tooltip-id="my-tooltip" data-tooltip-content={tooltips.aq1BackedFloorPrice} className={styles.tooltip}>
+                            <TooltipIcon />
+                        </a>
+                    </h2>
+                    <span className={styles.dashboardCardNumber}><EtherIcon />{parseFloat(treasuryAssetsValue * 0.001).toFixed(5)}</span>
                 </div>
                 <div className={styles.dashboardCardSmall}>
-                    <h2>AQ1 Market Floor Price</h2>
-                    <span className={styles.dashboardCardNumber}>{marketFloorPrice}</span>
+                    <h2>
+                        AQ1 Market Floor Price
+                        <Tooltip id="market-floor-tooltip" className={styles.toolTipBallon} />
+                        <a data-tooltip-id="market-floor-tooltip" data-tooltip-content={tooltips.aq1MarketFloorPrice} className={styles.tooltip}>
+                            <TooltipIcon />
+                        </a>
+                    </h2>
+                    <span className={styles.dashboardCardNumber}><EtherIcon />{marketFloorPrice}</span>
                 </div>
                 <div className={styles.dashboardCardSmall}>
                     <h2>AQ1 Supply</h2>
@@ -120,20 +138,33 @@ export default function Dashboard({
                 </div>
                 <div className={styles.dashboardCard}>
                     <h2>AQ1 Market Cap</h2>
-                    <span className={styles.dashboardCardNumber}>{marketCap?.toFixed(5)}</span>
+                    <span className={styles.dashboardCardNumber}><EtherIcon />{marketCap?.toFixed(5)}</span>
                 </div>
                 <div className={styles.dashboardCard}>
                     <h2>AQ1 Volume</h2>
-                    <span className={styles.dashboardCardNumber}>{volume?.toFixed(5)}</span>
+                    <span className={styles.dashboardCardNumber}><EtherIcon />{volume?.toFixed(5)}</span>
                     {/* <span className={styles.aq1Quantity}> = <EtherIcon /> {parseInt(totalVolume)}</span> */}
                 </div>
                 <div className={styles.dashboardCard}>
-                    <h2>AQ1 Royalties Fees</h2>
-                    <span className={styles.dashboardCardNumber}>{((10/100) * volume).toFixed(5)}</span>
+                    <h2>
+                        AQ1 Royalties Fees
+                        <Tooltip id="treasury-asset-value-tooltip" className={styles.toolTipBallon} />
+                        <a data-tooltip-id="treasury-asset-value-tooltip" data-tooltip-content={tooltips.aq1RoyaltiesFees} className={styles.tooltip}>
+                            <TooltipIcon />
+                        </a>
+                    </h2>
+                    {/* <span className={styles.dashboardCardNumber}><EtherIcon />{((10/100) * volume).toFixed(5)}</span> */}
+                    <span className={styles.dashboardCardNumber}><EtherIcon />{`${treasuryAssetsValue?.toFixed(5)}`}</span>
                 </div>
                 <div className={styles.dashboardCard}>
-                    <h2>Treasury Assets Value</h2>
-                    <span className={styles.dashboardCardNumber}>{`${treasuryAssetsValue?.toFixed(5)}`}</span>
+                    <h2>
+                        Treasury Assets Value
+                        <Tooltip id="treasury-asset-value-tooltip" className={styles.toolTipBallon} />
+                        <a data-tooltip-id="treasury-asset-value-tooltip" data-tooltip-content={tooltips.treasuryAssetValue} className={styles.tooltip}>
+                            <TooltipIcon />
+                        </a>
+                    </h2>
+                    <span className={styles.dashboardCardNumber}><EtherIcon />{`${treasuryAssetsValue?.toFixed(5)}`}</span>
                 </div>
                 <div className={styles.dashboardCard}>
                     <h2>Treasury Composition</h2>

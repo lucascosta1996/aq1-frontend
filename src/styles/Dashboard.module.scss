@@ -39,6 +39,22 @@
     font-size: 25.6px;
     margin-bottom: 10px;
     display: flex;
+    position: relative;
+
+    svg {
+        width: 12.6px;
+        margin-right: 10px;
+    }
+}
+
+.openNewTab {
+    position: absolute;
+    left: 60px;
+    max-width: 20px;
+    svg {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .aq1Quantity {
@@ -92,6 +108,8 @@
         color: #86868b;
         font-size: 13px;
         margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
     }
 }
 
@@ -129,4 +147,15 @@
 
 .negativeAmount {
     color: rgb(222, 84, 84);
+}
+
+.tooltip {
+    fontSize: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.toolTipBallon {
+    max-width: 300px;
+    font-weight: 300;
 }
