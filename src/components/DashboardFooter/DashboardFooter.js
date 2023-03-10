@@ -1,3 +1,4 @@
+import { Aq1IconWhite } from "@/assets/Aq1IconWhite";
 import { DocsIcon } from "@/assets/DocsIcon";
 import { MediumIcon } from "@/assets/MediumIcon";
 import { TwitterIcon } from "@/assets/TwitterIcon";
@@ -6,26 +7,80 @@ import styles from './DashboardFooter.module.scss'
 export default function DashboardFooter() {
     return (
         <footer className={styles.footer}>
-            {/* <span>© Aliquo Dashboard v0.1</span>
-            <div>
-                <ul>
+            <div className={styles.footerLinks}>
+                <section className={styles.logo}>
+                    <Aq1IconWhite />
+                    <span>Aliquo</span>
+                </section>
+                <section className={styles.links}>
+                    <ul>
+                        <li>
+                            <span>Resources</span>
+                        </li>
+                        <li>
+                            <a href="https://docs.aliquo.xyz/" target="_blank">
+                                Documentation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://aliquo.xyz/Aliquo-Whitepaper.pdf" target="_blank">
+                                Whitepaper
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://etherscan.io/address/0xc163a42088c7c65a23b059537519f6a02bd18075" target="_blank">
+                                AQ1 Contract
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://aliquo.notion.site/aliquo/Aliquo-Brand-e3acd23db64840859fdd060ff32b6c5a" target="_blank">
+                                Brand Assets
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <span>Protocol</span>
+                        </li>
+                        <li>
+                            <a href="https://aliquo.medium.com/" target="_blank">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/aliquoxyz" target="_blank">
+                                Twitter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://gov.aliquo.xyz/#/" target="_blank">
+                                Snapshot
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
                     <li>
-                        <a href="https://twitter.com/aliquoxyz" target="_blank">
-                            <TwitterIcon />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://aliquo.medium.com/" target="_blank">
-                            <MediumIcon />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://docs.aliquo.xyz/" target="_blank">
-                            <DocsIcon />
-                        </a>
-                    </li>
-                </ul>
-            </div> */}
+                            <span>Legal</span>
+                        </li>
+                        <li>
+                            <a href="https://docs.aliquo.xyz/statements/terms-of-use/4.-disclaimer" target="_blank">
+                                Disclaimer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.aliquo.xyz/statements/terms-of-use/9.-privacy-policy" target="_blank">
+                                Privacy Policy
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div className={styles.footerFooter}>
+                <span>2023 Aliquo</span>
+                <a href="https://twitter.com/aliquoxyz" target="__blank">
+                    <TwitterIcon />
+                </a>
+            </div>
         </footer>
     )
 }

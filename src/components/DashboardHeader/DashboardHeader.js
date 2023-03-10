@@ -17,7 +17,7 @@ export default function DashboardHeader() {
             {/* TODO: Make api request to connect wallet */}
             <ul className={styles.links}>
                 <li>
-                    <a className={styles.osIcon} href="https://opensea.io/collection/aqone" target="__blank">
+                    <a className={styles.osIcon} href="https://etherscan.io/address/0xc163a42088c7c65a23b059537519f6a02bd18075" target="__blank">
                         <EtherscanIcon />
                     </a>
                 </li>
