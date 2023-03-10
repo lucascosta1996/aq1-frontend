@@ -2,6 +2,7 @@ import { Aq1IconWhite } from "@/assets/Aq1IconWhite";
 import { DocsIcon } from "@/assets/DocsIcon";
 import { MediumIcon } from "@/assets/MediumIcon";
 import { TwitterIcon } from "@/assets/TwitterIcon";
+import Link from "next/link";
 import styles from './DashboardFooter.module.scss'
 
 export default function DashboardFooter() {
@@ -23,9 +24,9 @@ export default function DashboardFooter() {
                             </a>
                         </li>
                         <li>
-                            <a href="https://aliquo.xyz/Aliquo-Whitepaper.pdf" target="_blank">
-                                Whitepaper
-                            </a>
+                            <Link href="/Aliquo-Whitepaper.pdf" target="_blank">
+                                <a target="__blank" rel="noopener noreferrer">Whitepaper</a>
+                            </Link>
                         </li>
                         <li>
                             <a href="https://etherscan.io/address/0xc163a42088c7c65a23b059537519f6a02bd18075" target="_blank">
@@ -43,7 +44,7 @@ export default function DashboardFooter() {
                             <span>Protocol</span>
                         </li>
                         <li>
-                            <a href="https://aliquo.medium.com/" target="_blank">
+                            <a href="https://mirror.xyz/aliquo.eth" target="_blank">
                                 Blog
                             </a>
                         </li>
@@ -75,12 +76,12 @@ export default function DashboardFooter() {
                     </ul>
                 </section>
             </div>
-            <div className={styles.footerFooter}>
+            {/* <div className={styles.footerFooter}>
                 <span>2023 Aliquo</span>
                 <a href="https://twitter.com/aliquoxyz" target="__blank">
                     <TwitterIcon />
                 </a>
-            </div>
+            </div> */}
         </footer>
     )
 }
