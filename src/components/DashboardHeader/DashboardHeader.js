@@ -8,10 +8,12 @@ import styles from './DashboardHeader.module.scss';
 export default function DashboardHeader() {
     return (
         <header className={styles.header}>
-            <Link href="/#main" className={styles.aq1Icon}>
-                <Aq1IconWhite />
+            <div className={styles.aq1Icon}>
+                <Link href="/#main">
+                    <Aq1IconWhite />
+                </Link>
                 <span className={styles.betaLabel}>BETA</span>
-            </Link>
+            </div>
             {/* TODO: Make api request to connect wallet */}
             <ul className={styles.links}>
                 <li>

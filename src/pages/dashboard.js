@@ -2,7 +2,7 @@ import styles from '@/styles/Dashboard.module.scss';
 import DashboardHeader from '@/components/DashboardHeader/DashboardHeader';
 import sampleData from '../sample_data';
 import DashboardFooter from '@/components/DashboardFooter/DashboardFooter';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import useIsFirstRender from '@/hooks/useIsFirstRender';
 import BigNumber from "bignumber.js";
 import { EtherIcon } from '@/assets/EtherIcon';
@@ -51,7 +51,6 @@ export default function Dashboard({
     wethBalanceTreasury
 }) {
     const isFirst = useIsFirstRender();
-    const isFirstRender = useRef(true);
     const [treasuryBalance, setTreasuryBalance] = useState(0);
     const [ previousData, setPreviousData ] = useState({});
     const [blurPoolBalance, setBlurPoolBalance] = useState(0);
