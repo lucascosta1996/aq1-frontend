@@ -25,10 +25,6 @@ export default function Dashboard({ dashboardData }) {
     const [marketCap, setMarketCap] = useState(0);
 
     useEffect(() => {
-        const bigNTest = new BigNumber(treasuryBalance);
-        const bigNumber = new BigNumber('11703629853984708848');
-        const result = bigNumber.dividedBy('1000000000000000000');
-        const formattedResult = result.toFixed(7);
         const treasuryAssetsValueBalance = parseFloat(treasuryBalance) + parseFloat(blurPoolBalance) + parseFloat(wethBalance)
         setTreasuryAssetsValue(
             treasuryAssetsValueBalance
@@ -105,10 +101,6 @@ export default function Dashboard({ dashboardData }) {
         // TODO: When receiving new api calls we must compare the new values and show the diff for each new value.
         // setPreviousData(temporarySamplePreviousData); 
     }, []);
-
-    useEffect(() => {
-        // debugger;
-    }, [treasuryAssetsValue, marketFloorPrice]);
 
     return (
         <>
