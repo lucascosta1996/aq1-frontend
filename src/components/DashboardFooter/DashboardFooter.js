@@ -11,7 +11,6 @@ export default function DashboardFooter() {
             <div className={styles.footerLinks}>
                 <section className={styles.logo}>
                     <Aq1IconWhite />
-                    <span>Aliquo</span>
                 </section>
                 <section className={styles.links}>
                     <ul>

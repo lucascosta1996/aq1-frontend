@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 .header {
     position: absolute;
-    top: 0;
-    width: 100%;
+    top: 12px;
+    width: 98%;
 }
 
 .dashboardContainer {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    margin-top: 160px;
+    margin-top: 114px;
     justify-content: center;
+    justify-content: space-between;
 }
 
 .dashboardCard {
@@ -20,12 +22,13 @@
     position: relative;
     height: 200px;
     padding: 16px;
-    margin: 9px 5px;
+    margin: 9px 0;
     flex: 0 0 32.333333%;
     font-family: 'Inter', sans-serif;
 
     @media (max-width: 1024px) {
-        flex: 0 0 95%;
+        flex: auto;
+        width: 100%;
     }
 
     h2 {
@@ -96,12 +99,13 @@
     position: relative;
     height: 200px;
     padding: 16px;
-    margin: 9px 6px;
+    margin: 9px 0;
     flex: 0 0 18.99999999%;
     font-family: 'Inter', sans-serif;
 
     @media (max-width: 1024px) {
-        flex: 0 0 95%;
+        flex: auto;
+        width: 100%;
     }
 
     h2 {
@@ -158,4 +162,58 @@
 .toolTipBallon {
     max-width: 300px;
     font-weight: 300;
+}
+
+.container {
+    width: 98%;
+    margin: 0 auto;
+    overflow-y: hidden;
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    border: 1px solid #252525;
+    flex: 0 0 32.333333%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+
+    @media (max-width: 1024px) {
+        flex: auto;
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+.addressLabel {
+    border-right: 1px solid #252525;
+    color: #86868b;
+    font-size: 13px;
+    padding: 18px 36px;
+}
+
+.tooltipAddress {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    margin-left: 7px;
+    cursor: pointer;
+    justify-content: center;
+
+    svg {
+        margin-left: 8px;
+        width: 17px;
+    }
+}
+
+.toolTipBallonAddress {
+    font-weight: 300;
+    width: 500px;
+}
+
+.addressContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
