@@ -27,11 +27,6 @@ export default function DashboardFooter() {
                                 <a target="__blank" rel="noopener noreferrer">Whitepaper</a>
                             </Link>
                         </li>
-                        <li>
-                            <a href="https://etherscan.io/address/0xc163a42088c7c65a23b059537519f6a02bd18075" target="_blank">
-                                AQ1 Contract
-                            </a>
-                        </li>
                     </ul>
                     <ul>
                         <li>
