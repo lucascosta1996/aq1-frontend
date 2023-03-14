@@ -32,11 +32,6 @@ export default function DashboardFooter() {
                                 AQ1 Contract
                             </a>
                         </li>
-                        <li>
-                            <a href="https://aliquo.notion.site/aliquo/Aliquo-Brand-e3acd23db64840859fdd060ff32b6c5a" target="_blank">
-                                Brand Assets
-                            </a>
-                        </li>
                     </ul>
                     <ul>
                         <li>
