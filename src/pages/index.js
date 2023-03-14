@@ -224,7 +224,7 @@ export default function Home({
                     </section>
                     <section className={styles.addressContainer}>
                         <Tooltip id="aliquo-treasury-tooltip" className={styles.toolTipBallonAddress} />
-                        <a href="https://etherscan.io/address/0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3" data-tooltip-id="aliquo-treasury-tooltip" data-tooltip-content="0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3" className={styles.tooltipAddress}>
+                        <a href="https://etherscan.io/address/0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3" target="__blank" data-tooltip-id="aliquo-treasury-tooltip" data-tooltip-content="0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3" className={styles.tooltipAddress}>
                             0x18c1...55d3 <OpenInNewTabIcon />
                         </a>
                     </section>
