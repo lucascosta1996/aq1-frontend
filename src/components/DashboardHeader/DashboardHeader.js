@@ -16,11 +16,11 @@ export default function DashboardHeader() {
             </div>
             {/* TODO: Make api request to connect wallet */}
             <ul className={styles.links}>
-                <li>
+                {/* <li>
                     <a className={styles.osIcon} href="https://etherscan.io/address/0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3" target="__blank">
                         <EtherscanIcon />
                     </a>
-                </li>
+                </li> */}
                 <li>
                     <a className={styles.osIcon} href="https://opensea.io/collection/aqone" target="__blank">
                         <OpenSeaIcon />
