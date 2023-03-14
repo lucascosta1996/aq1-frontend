@@ -1,3 +1,4 @@
+import { AliquoLogoLabel } from "@/assets/AliquoLogoLabel";
 import { Aq1IconWhite } from "@/assets/Aq1IconWhite";
 import { DocsIcon } from "@/assets/DocsIcon";
 import { MediumIcon } from "@/assets/MediumIcon";
@@ -10,7 +11,7 @@ export default function DashboardFooter() {
         <footer className={styles.footer}>
             <div className={styles.footerLinks}>
                 <section className={styles.logo}>
-                    <Aq1IconWhite />
+                    <AliquoLogoLabel />
                 </section>
                 <section className={styles.links}>
                     <ul>
