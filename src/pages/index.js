@@ -11,7 +11,7 @@ import { tooltips } from '@/utils/tooltips';
 import Head from 'next/head';
 import { OpenInNewTabIcon } from '@/assets/OpenInNewTabIcon';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const [collectionRes, ethBalanceRes, blurPoolBalanceRes, wethBalanceRes] = await Promise.all([
       fetch('https://api.opensea.io/api/v1/collection/aqone?format=json'),
       fetch(`https://api.etherscan.io/api?module=account&action=balance&address=0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3&tag=latest&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`),
@@ -176,7 +176,7 @@ export default function Home({
                 </div>
                 <div className={styles.dashboardCard}>
                     <h2>
-                        Treasury Assets Value
+                        AQ1 Vault Assets Value
                         <Tooltip id="treasury-asset-value-tooltip" className={styles.toolTipBallon} />
                         <a data-tooltip-id="treasury-asset-value-tooltip" data-tooltip-content={tooltips.treasuryAssetValue} className={styles.tooltip}>
                             <TooltipIcon />
@@ -185,7 +185,7 @@ export default function Home({
                     <span className={styles.dashboardCardNumber}><EtherIcon />{`${treasuryAssetsValue?.toFixed(5)}`}</span>
                 </div>
                 <div className={styles.dashboardCard}>
-                    <h2>Treasury Composition</h2>
+                    <h2>AQ1 Vault Composition</h2>
                     <ul className={styles.list}>
                         <li>
                             <span>{parseFloat(treasuryBalance?.toFixed(5))}</span>
@@ -202,7 +202,7 @@ export default function Home({
                     </ul>
                 </div>
                 <div className={styles.dashboardCard}>
-                    <h2>Treasury Allocation</h2>
+                    <h2>AQ1 Vault Allocation</h2>
                     <ul className={styles.list}>
                         <li>
                             <span>{ethAllocation}%</span>
@@ -220,7 +220,7 @@ export default function Home({
                 </div>
                 <div className={styles.address}>
                     <section className={styles.addressLabel}>
-                        Aliquo Treasury
+                        AQ1 Vault
                     </section>
                     <section className={styles.addressContainer}>
                         <Tooltip id="aliquo-treasury-tooltip" className={styles.toolTipBallonAddress} />
