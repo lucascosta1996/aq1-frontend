@@ -11,7 +11,7 @@ import { tooltips } from '@/utils/tooltips';
 import Head from 'next/head';
 import { OpenInNewTabIcon } from '@/assets/OpenInNewTabIcon';
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const [collectionRes, ethBalanceRes, blurPoolBalanceRes, wethBalanceRes] = await Promise.all([
       fetch('https://api.opensea.io/api/v1/collection/aqone?format=json'),
       fetch(`https://api.etherscan.io/api?module=account&action=balance&address=0x18c1ea679Aad89e495cA0Fae3a7092c239D755d3&tag=latest&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`),
