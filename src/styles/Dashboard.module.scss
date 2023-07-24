@@ -52,6 +52,10 @@
     flex: 0 0 50%;
     font-family: 'Inter', sans-serif;
 
+    @media (min-width: 1366px) {
+        height: 688px;
+    }
+
     @media (max-width: 1024px) {
         flex: auto;
         width: 100%;
