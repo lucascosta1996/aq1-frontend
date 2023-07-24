@@ -6,6 +6,12 @@
     width: 98%;
 }
 
+.container {
+    width: 98%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 .dashboardContainer {
     display: flex;
     flex-wrap: wrap;
@@ -14,6 +20,7 @@
     min-height: 90vh;
     flex-direction: column;
     justify-content: flex-start;
+    overflow: hidden;
 
     @media (max-width: 820px) {
         width: 95%;
@@ -217,12 +224,6 @@
 .toolTipBallon {
     max-width: 300px;
     font-weight: 300;
-}
-
-.container {
-    width: 98%;
-    margin: 0 auto;
-    overflow-y: hidden;
 }
 
 .address {
