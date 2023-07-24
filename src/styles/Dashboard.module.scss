@@ -28,8 +28,7 @@
 }
 
 .dashboardCard {
-    border: 0.5px solid #222529
-;
+    border: 0.5px solid #222529;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -51,8 +50,7 @@
 }
 
 .dashboardCard5050 {
-    border: 0.5px solid #222529
-;
+    border: 0.5px solid #222529;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -62,15 +60,18 @@
     font-family: 'Inter', sans-serif;
     border-bottom: none;
 
+    @media (min-width: 1921px) {
+        height: 835px;
+    }
+
     @media (min-width: 1600px) and (max-width: 1920px) {
         height: 688px;
     }
     
-    @media (min-width: 1024px) and (max-width: 1600px){
+    @media (min-width: 1024px) and (max-width: 1599px){
         height: 323px;
     }
     
-
     @media (max-width: 1024px) {
         flex: auto;
         width: 100%;
@@ -168,8 +169,7 @@
 }
 
 .dashboardCardSmall {
-    border: 0.5px solid #222529
-;
+    border: 0.5px solid #222529;
     display: flex;
     flex-direction: column;
     position: relative;
