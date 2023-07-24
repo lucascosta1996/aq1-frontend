@@ -28,7 +28,8 @@
 }
 
 .dashboardCard {
-    border: 0.5px solid #1A1A1A;
+    border: 0.5px solid #222529
+;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -50,7 +51,8 @@
 }
 
 .dashboardCard5050 {
-    border: 0.5px solid #1A1A1A;
+    border: 0.5px solid #222529
+;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -58,6 +60,7 @@
     padding: 16px;
     flex: 0 0 50%;
     font-family: 'Inter', sans-serif;
+    border-bottom: none;
 
     @media (min-width: 1600px) and (max-width: 1920px) {
         height: 688px;
@@ -92,6 +95,10 @@
         }
 
     }
+}
+
+.noBorderLeft {
+    border-left: none;
 }
 
 .thirtyDays {
@@ -161,7 +168,8 @@
 }
 
 .dashboardCardSmall {
-    border: 0.5px solid #1A1A1A;
+    border: 0.5px solid #222529
+;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -234,7 +242,8 @@
 .address {
     display: flex;
     align-items: center;
-    border: 0.5px solid #1A1A1A;
+    border: 0.5px solid #222529
+;
     flex: 0 0 33.333333%;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
@@ -247,7 +256,8 @@
 }
 
 .addressLabel {
-    border-right: 0.5px solid #1A1A1A;
+    border-right: 0.5px solid #222529
+;
     color: #86868b;
     font-size: 13px;
     padding: 18px 36px;

@@ -168,7 +168,7 @@ export default function AqOne({
                         </h2>
                         <span className={styles.dashboardCardNumber}>{parseFloat(treasuryAssetsValue * 0.001).toFixed(5)} ETH</span>
                     </div>
-                    <div className={styles.dashboardCard5050}>
+                    <div className={`${styles.dashboardCard5050} ${styles.noBorderLeft}`}>
                         <h2>
                             AQ1 Royalties Fees
                             {/* <Tooltip id="treasury-asset-value-tooltip" className={styles.toolTipBallon} />
