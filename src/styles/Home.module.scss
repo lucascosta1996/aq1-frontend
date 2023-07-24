@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 .container {
-  background-color: #363B42;
+  background-color: #15171A;
   width: 98%;
   height: 97vh;
   font-family: 'Inter', sans-serif;
   position: relative;
-  border: 0.5px solid #1A1A1A;
+  border: 0.5px solid #222529;
   margin: 15px auto;
 }
 
@@ -19,7 +19,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   padding: 0 30px;
-  border-bottom: 0.5px solid #1A1A1A;
+  border-bottom: 0.5px solid #222529;
 
   a {
     transition: all .2s ease;
@@ -38,7 +38,7 @@
   padding: 0 30px;
   bottom: 0;
   height: 94.5px;
-  border-top: 0.5px solid #1A1A1A;
+  border-top: 0.5px solid #222529;
 
   ul {
     list-style: none;
