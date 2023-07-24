@@ -40,66 +40,6 @@ export async function getServerSideProps() {
   }
 }
 
-export const metadata = {
-    title: 'Aliquo',
-    description: 'A decentralized reserve asset protocol, built on Ethereum.',
-    openGraph: {
-        title: 'Aliquo',
-        description: 'A decentralized reserve asset protocol, built on Ethereum.',
-        url: 'https://aliquo.xyz/',
-        siteName: 'Aliquo',
-        images: [
-            {
-                url: 'https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F0KTkDWgsWbKjzAKNB4OG%2Fuploads%2FlETM2l0cC8DfOyXfDiIR%2Fimage.png?alt=media&token=6beafb61-0c31-45b7-b1a0-6db24873d0dd',
-                width: 800,
-                height: 600,
-            },
-            {
-                url: 'https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F0KTkDWgsWbKjzAKNB4OG%2Fuploads%2FlETM2l0cC8DfOyXfDiIR%2Fimage.png?alt=media&token=6beafb61-0c31-45b7-b1a0-6db24873d0dd',
-                width: 1800,
-                height: 1600,
-                alt: 'Aliquo',
-            },
-        ],
-        type: 'website',
-    },
-    twitter: {
-        title: 'Aliquo',
-        description: 'A decentralized reserve asset protocol, built on Ethereum.',
-        url: 'https://aliquo.xyz/',
-        siteName: 'Aliquo',
-        images: [
-            {
-                url: 'https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F0KTkDWgsWbKjzAKNB4OG%2Fuploads%2FlETM2l0cC8DfOyXfDiIR%2Fimage.png?alt=media&token=6beafb61-0c31-45b7-b1a0-6db24873d0dd',
-                width: 800,
-                height: 600,
-            },
-            {
-                url: 'https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F0KTkDWgsWbKjzAKNB4OG%2Fuploads%2FlETM2l0cC8DfOyXfDiIR%2Fimage.png?alt=media&token=6beafb61-0c31-45b7-b1a0-6db24873d0dd',
-                width: 1800,
-                height: 1600,
-                alt: 'Aliquo',
-            },
-        ],
-        type: 'website',
-    },
-    robots: {
-        index: false,
-        follow: true,
-        nocache: true,
-        googleBot: {
-            index: true,
-            follow: false,
-            noimageindex: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-            content: 'https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F0KTkDWgsWbKjzAKNB4OG%2Fuploads%2FlETM2l0cC8DfOyXfDiIR%2Fimage.png?alt=media&token=6beafb61-0c31-45b7-b1a0-6db24873d0dd',
-        },
-        content: 'https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F0KTkDWgsWbKjzAKNB4OG%2Fuploads%2FlETM2l0cC8DfOyXfDiIR%2Fimage.png?alt=media&token=6beafb61-0c31-45b7-b1a0-6db24873d0dd'
-    },
-}
-
 export default function AqOne({
   ethBalanceTreasury,
   blurPoolBalanceTreasury,

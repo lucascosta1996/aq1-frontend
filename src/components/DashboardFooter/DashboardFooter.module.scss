@@ -35,6 +35,11 @@
         li {
             margin: 0 10px;
             padding: 5px 0;
+            transition: all .2s ease;
+
+            &:hover {
+                opacity: 0.3;
+            }
 
             a {
                 cursor: pointer;
@@ -55,6 +60,8 @@
     width: 98%;
     margin: 0 auto;
     padding: 40px 0;
+
+    
 
     @media (max-width: 1024px) {
         width: 100%;
@@ -130,10 +137,20 @@
 
     li {
         margin-left: 20px;
+        transition: all .2s ease;
+
+        &:hover {
+            opacity: 0.3;
+        }
     }
 }
 
 .addressContainer {
     color: #fff;
     font-size: 16px;
+    transition: all .2s ease;
+
+    &:hover {
+        opacity: 0.3;
+    }
 }

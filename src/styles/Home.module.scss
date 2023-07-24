@@ -20,6 +20,14 @@
   font-size: 16px;
   padding: 0 30px;
   border-bottom: 0.5px solid #1A1A1A;
+
+  a {
+    transition: all .2s ease;
+
+    &:hover {
+        opacity: 0.3;
+    }
+  }
 }
 
 .footer {
@@ -39,7 +47,7 @@
       cursor: pointer;
       padding: 5px 0;
       transition: all .2s ease;
-      font-size: 14px;
+      font-size: 16px;
 
       &:hover {
         opacity: 0.3;
@@ -70,6 +78,13 @@
   position: absolute;
   bottom: 32px;
   left: 30px;
+  font-size: 16px;
+
+  ul {
+    li {
+      font-size: 16px;
+    }
+  }
 }
 
 .dashboardButton {
@@ -78,10 +93,10 @@
   font-size: 14px;
   border: none;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all .2s ease;
 
   &:hover {
-    opacity: 0.7;
+      opacity: 0.3;
   }
 }
 
