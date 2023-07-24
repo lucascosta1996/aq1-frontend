@@ -135,14 +135,6 @@ export default function Home() {
                                 Docs
                             </a>
                         </li>
-                        <li className={!showMenu && styles.hidden}>
-                            <a href="https://mirror.xyz/aliquo.eth" target="_blank">
-                                Blog
-                            </a>
-                        </li>
-                        <li className={!showMenu && styles.hidden}>
-                            <span>Governance</span>
-                        </li>
                         <li className={showMenu && styles.applyOpacity} onClick={() => setShowMenu(!showMenu)}>
                             <span>About</span>
                         </li>
