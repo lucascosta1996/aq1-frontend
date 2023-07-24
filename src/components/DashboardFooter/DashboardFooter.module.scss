@@ -1,19 +1,25 @@
 .footer {
+    border: 0.5px solid #1A1A1A;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #86868b;
     font-size: 12.5px;
-    height: 250px;
-    margin: 20px 0;
+    height: 120px;
+    margin-bottom: 20px;
     font-family: 'Inter', sans-serif;
     padding: 0 30px;
-    border: 1px solid #252525;
+    width: 100%;
 
     @media (max-width: 1024px) {
         padding: 0 10px;
         height: auto;
+    }
+
+    @media (max-width: 820px) {
+        height: 120px;
+        flex-direction: row;
     }
 
     ul {
@@ -56,6 +62,12 @@
         align-items: flex-start;
         padding-bottom: 80px;
     }
+
+    @media (max-width: 820px) {
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+    }
 }
 
 .links {
@@ -70,6 +82,10 @@
             margin-left: 0;
             padding-left: 0;
         }
+    }
+
+    @media (max-width: 820px) {
+        width: auto;
     }
 }
 
@@ -105,4 +121,19 @@
     svg {
         color: #FFF;
     }
+}
+
+.icons {
+    display: flex;
+    flex-direction: row!important;
+    align-self: center;
+
+    li {
+        margin-left: 20px;
+    }
+}
+
+.addressContainer {
+    color: #fff;
+    font-size: 14px;
 }

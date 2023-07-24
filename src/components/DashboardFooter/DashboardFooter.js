@@ -1,20 +1,54 @@
 import { AliquoLogoLabel } from "@/assets/AliquoLogoLabel";
-import { Aq1IconWhite } from "@/assets/Aq1IconWhite";
-import { DocsIcon } from "@/assets/DocsIcon";
-import { MediumIcon } from "@/assets/MediumIcon";
-import { TwitterIcon } from "@/assets/TwitterIcon";
+import { BlurPoolIcon } from "@/assets/BlurPoolIcon";
+import { OpenSeaIcon } from "@/assets/OpenSeaIcon";
+import { OkxLogo } from "@/assets/OkxLogo";
 import Link from "next/link";
 import styles from './DashboardFooter.module.scss'
+import { UniSwapLogo } from "@/assets/UniSwapLogo";
+import { CoinBaseLogo } from "@/assets/CoinBaseLogo";
+import { Tooltip } from "react-tooltip";
 
-export default function DashboardFooter() {
+export default function DashboardFooter({ showIcons = true }) {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerLinks}>
-                <section className={styles.logo}>
-                    <AliquoLogoLabel />
+                <section className={styles.addressContainer}>
+                    {/* <Tooltip id="aliquo-treasury-tooltip" className={styles.toolTipBallonAddress} /> */}
+                    <a href="https://etherscan.io/address/0xC163A42088c7c65a23B059537519F6a02bD18075#code" target="__blank" data-tooltip-id="aliquo-treasury-tooltip" data-tooltip-content="0xC163A42088c7c65a23B059537519F6a02bD18075" className={styles.tooltipAddress}>
+                        Contract
+                    </a>
                 </section>
                 <section className={styles.links}>
-                    <ul>
+                    {showIcons ? (
+                        <ul className={styles.icons}>
+                            <li>
+                                <a className={styles.osIcon} href="https://opensea.io/collection/aqone" target="__blank">
+                                    <OpenSeaIcon />
+                                </a>
+                            </li>
+                            <li>
+                                <a className={styles.blurPoolIcon} href="https://blur.io/collection/aqone" target="__blank">
+                                    <BlurPoolIcon />
+                                </a>
+                            </li>
+                            {/* <li>
+                                <a className={styles.okxIcon} href="https://blur.io/collection/aqone" target="__blank">
+                                    <OkxLogo />
+                                </a>
+                            </li>
+                            <li>
+                                <a className={styles.okxIcon} href="https://blur.io/collection/aqone" target="__blank">
+                                    <UniSwapLogo />
+                                </a>
+                            </li>
+                            <li>
+                                <a className={styles.okxIcon} href="https://blur.io/collection/aqone" target="__blank">
+                                    <CoinBaseLogo />
+                                </a>
+                            </li> */}
+                        </ul>
+                    ) : null}
+                    {/* <ul>
                         <li>
                             <span>Resources</span>
                         </li>
@@ -28,42 +62,7 @@ export default function DashboardFooter() {
                                 <a target="__blank" rel="noopener noreferrer">Whitepaper</a>
                             </Link>
                         </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <span>Protocol</span>
-                        </li>
-                        <li>
-                            <a href="https://mirror.xyz/aliquo.eth" target="_blank">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/aliquoxyz" target="_blank">
-                                Twitter
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://gov.aliquo.xyz/#/" target="_blank">
-                                Snapshot
-                            </a>
-                        </li>
-                    </ul>
-                    <ul>
-                    <li>
-                            <span>Legal</span>
-                        </li>
-                        <li>
-                            <a href="https://docs.aliquo.xyz/statements/terms-of-use/4.-disclaimer" target="_blank">
-                                Disclaimer
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://docs.aliquo.xyz/statements/terms-of-use/9.-privacy-policy" target="_blank">
-                                Privacy Policy
-                            </a>
-                        </li>
-                    </ul>
+                    </ul> */}
                 </section>
             </div>
             {/* <div className={styles.footerFooter}>
