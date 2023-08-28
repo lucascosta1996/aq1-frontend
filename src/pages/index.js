@@ -126,11 +126,6 @@ export default function Home() {
                 <div className={styles.aboutMenu}>
                     <ul>
                         <li className={!showMenu && styles.hidden}>
-                            <Link href="/Aliquo-Whitepaper.pdf" target="_blank">
-                                <a target="__blank" rel="noopener noreferrer">Whitepaper</a>
-                            </Link>
-                        </li>
-                        <li className={!showMenu && styles.hidden}>
                             <a href="https://docs.aliquo.xyz/" target="_blank">
                                 Docs
                             </a>
